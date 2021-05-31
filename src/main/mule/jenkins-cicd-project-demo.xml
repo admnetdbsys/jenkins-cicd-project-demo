@@ -16,7 +16,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output application/json
 ---
 {
-	Response: "CI/CD Flow executed successfully!!!"	
+	Response: "CI/CD Flow executed successfully Baby!!!"	
 	
 }]]></ee:set-payload>
 			</ee:message>
