@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="jenkins-cicd-project-demoFlow" doc:id="19ec761f-0b2b-420c-bbb9-38242f2a3d18" >
-		<http:listener doc:name="Listener" doc:id="b0b66e3c-4eac-4f32-8480-8cd3d24e90a5" config-ref="HTTP_Listener_config" path="/cicdtest"/>
+		<http:listener doc:name="Listener" doc:id="b0b66e3c-4eac-4f32-8480-8cd3d24e90a5" config-ref="HTTP_Listener_config" path="/cicdtest" allowedMethods="GET"/>
 		<ee:transform doc:name="Transform Message" doc:id="b534abd8-b6bb-43ce-94f9-7b9289b08b69" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -21,6 +21,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="edf3b877-3a71-4c41-b7ff-610979066036" message="####### CI/CD Flow #########"/>
+		<logger level="INFO" doc:name="Logger" doc:id="edf3b877-3a71-4c41-b7ff-610979066036" message="####### CI/CD Flow Success#########"/>
 	</flow>
 </mule>
